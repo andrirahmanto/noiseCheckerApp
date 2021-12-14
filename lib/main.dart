@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:noisechecker/utils/styles.util.dart';
 import 'package:sizer/sizer.dart';
+
+import 'screens/main.screen.dart';
+import 'screens/splash.screen.dart';
+import 'screens/webview.screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,8 +28,18 @@ class MyApp extends StatelessWidget {
           // or simply save your changes to "hot reload" in a Flutter IDE).
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
+          appBarTheme: AppBarTheme(
+            backgroundColor: ColorPalettes.navyDark,
+            iconTheme: IconThemeData(color: ColorPalettes.white),
+          ),
           primarySwatch: Colors.blue,
+          fontFamily: 'Poppins',
         ),
+        routes: {
+          SplashScreen.routeName: (ctx) => SplashScreen(),
+          MainScreen.routeName: (ctx) => MainScreen(),
+          WebScreen.routeName: (ctx) => WebScreen(),
+        },
         home: MyHomePage(title: 'Flutter Demo Home Page'),
       );
     });
