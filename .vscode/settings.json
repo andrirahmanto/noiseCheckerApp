@@ -1,0 +1,16 @@
+{
+    "favorites.resources": [
+        {
+            "filePath": "lib",
+            "group": "Default"
+        },
+        {
+            "filePath": "pubspec.yaml",
+            "group": "Default"
+        },
+        {
+            "filePath": "assets",
+            "group": "Default"
+        }
+    ]
+}
