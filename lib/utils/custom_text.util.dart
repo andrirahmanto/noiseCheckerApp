@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noisechecker/utils/styles.util.dart';
 import 'package:styled_text/styled_text.dart';
-import 'package:sizer/sizer.dart';
 
 class CustomText extends StatelessWidget {
   final String text;

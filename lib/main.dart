@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Poppins',
         ),
         routes: {
-          SplashScreen.routeName: (ctx) => SplashScreen(),
+          // SplashScreen.routeName: (ctx) => SplashScreen(),
           MainScreen.routeName: (ctx) => MainScreen(),
           WebScreen.routeName: (ctx) => WebScreen(),
         },
-        home: MyHomePage(title: 'Flutter Demo Home Page'),
+        home: SplashScreen(),
       );
     });
   }
