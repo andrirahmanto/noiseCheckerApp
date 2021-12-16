@@ -36,6 +36,7 @@ dependencies:
   sizer: ^2.0.15
   styled_text: ^3.0.4
   easy_splash_screen: ^1.0.3
+  webview_flutter: ^2.0.12
 
 dev_dependencies:
   flutter_test:
@@ -68,7 +69,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
+  fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Light.ttf
