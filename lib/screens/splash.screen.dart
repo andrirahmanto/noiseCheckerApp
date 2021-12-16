@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return EasySplashScreen(
       logo: Image.asset('assets/images/logo_splash.png'),
-      logoSize: 45.w,
+      logoSize: 35.w,
       backgroundColor: ColorPalettes.navyDark,
       showLoader: false,
       navigator: MainScreen(),
