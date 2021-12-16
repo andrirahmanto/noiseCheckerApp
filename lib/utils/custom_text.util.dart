@@ -24,7 +24,7 @@ class PrimaryText extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontSize: fontSize,
-        fontFamily: 'Quicksand',
+        fontFamily: 'Poppins',
         fontWeight: fontWeight,
       ),
     );
