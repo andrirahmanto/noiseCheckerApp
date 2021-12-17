@@ -7,6 +7,7 @@ class PrimaryText extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final TextOverflow? overflow;
+  final TextAlign? textAlign;
 
   const PrimaryText({
     required this.text,
@@ -14,6 +15,7 @@ class PrimaryText extends StatelessWidget {
     this.color: ColorPalettes.white,
     this.fontWeight: FontWeight.w700,
     this.overflow: TextOverflow.visible,
+    this.textAlign: TextAlign.start,
   });
 
   @override
@@ -21,6 +23,7 @@ class PrimaryText extends StatelessWidget {
     return Text(
       text,
       overflow: overflow,
+      textAlign: textAlign,
       style: TextStyle(
         color: color,
         fontSize: fontSize,

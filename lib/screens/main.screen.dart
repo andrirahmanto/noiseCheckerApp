@@ -108,6 +108,25 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
+  String getFeedback(double? maxDB) {
+    var noise = maxDB ?? 0;
+    if (noise == 0) {
+      return 'Press Start';
+    }
+    if (noise > 81) {
+      return 'Your exhaust noise exceeds the\nregulatory limit';
+    }
+    return 'Your exhaust noise is within regulatory\nsafety limits';
+  }
+
+  Color getFeedbackColor(double? maxDB) {
+    var noise = maxDB ?? 0;
+    if (noise > 81) {
+      return ColorPalettes.red;
+    }
+    return ColorPalettes.green;
+  }
+
   @override
   Widget build(BuildContext context) {
     if (chartData.length >= 30) {
@@ -126,14 +145,14 @@ class _MainScreenState extends State<MainScreen> {
       floatingActionButton: FloatingActionButton.extended(
         label: Text(_isRecording ? 'Stop' : 'Start'),
         onPressed: _isRecording ? stop : start,
-        icon: !_isRecording ? Icon(Icons.circle) : null,
-        backgroundColor: _isRecording ? Colors.red : Colors.green,
+        icon: !_isRecording ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+        backgroundColor: _isRecording ? ColorPalettes.red : ColorPalettes.green,
       ),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 5.w, left: 5.w, right: 5.w),
           width: 100.w,
-          color: Colors.red,
+          // color: Colors.red,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -144,10 +163,11 @@ class _MainScreenState extends State<MainScreen> {
                 },
                 child: Container(
                     width: 90.w,
-                    padding: EdgeInsets.all(5.w),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 2.w, horizontal: 5.w),
                     decoration: BoxDecoration(
                         color: ColorPalettes.white,
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
                     child: Row(
                       children: <Widget>[
                         Flexible(
@@ -160,6 +180,7 @@ class _MainScreenState extends State<MainScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
+                        Spacer(),
                         Flexible(
                           flex: 1,
                           child: Icon(Icons.arrow_forward_ios,
@@ -169,36 +190,62 @@ class _MainScreenState extends State<MainScreen> {
                     )),
               ),
               SizedBox(
-                height: 10.h,
+                height: 2.h,
               ),
               Container(
                 child: Column(
                   children: [
-                    Text(
-                      maxDB != null ? maxDB!.toStringAsFixed(2) : 'Press start',
-                      style: GoogleFonts.exo2(fontSize: 76),
+                    PrimaryText(
+                      text: maxDB != null ? maxDB!.toStringAsFixed(0) : '0',
+                      fontSize: 50.sp,
+                      fontWeight: FontWeight.w700,
+                      color: getFeedbackColor(maxDB),
                     ),
-                    Text(
-                      meanDB != null
-                          ? 'Mean: ${meanDB!.toStringAsFixed(2)}'
-                          : 'Awaiting data',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+                    Container(
+                        constraints: BoxConstraints(
+                            minHeight: 10.h, minWidth: double.infinity),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 2.w, horizontal: 5.w),
+                        decoration: BoxDecoration(
+                            color: getFeedbackColor(maxDB),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15))),
+                        child: Center(
+                          child: PrimaryText(
+                            text: getFeedback(maxDB),
+                            fontSize: 11.sp,
+                            textAlign: TextAlign.center,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )),
+                    SizedBox(
+                      height: 5.h,
                     ),
-                    SfCartesianChart(
-                      series: <LineSeries<ChartData, double>>[
-                        LineSeries<ChartData, double>(
-                            dataSource: chartData,
-                            xAxisName: 'Time',
-                            yAxisName: 'dB',
-                            name: 'dB values over time',
-                            xValueMapper: (ChartData value, _) => value.frames,
-                            yValueMapper: (ChartData value, _) => value.maxDB,
-                            animationDuration: 0),
-                      ],
+                    Container(
+                      width: 90.w,
+                      height: 30.h,
+                      padding:
+                          EdgeInsets.symmetric(vertical: 2.w, horizontal: 5.w),
+                      decoration: BoxDecoration(
+                          color: ColorPalettes.navyLight,
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      child: SfCartesianChart(
+                        series: <LineSeries<ChartData, double>>[
+                          LineSeries<ChartData, double>(
+                              dataSource: chartData,
+                              color: getFeedbackColor(maxDB),
+                              xAxisName: 'Time',
+                              yAxisName: 'dB',
+                              name: 'dB values over time',
+                              xValueMapper: (ChartData value, _) =>
+                                  value.frames,
+                              yValueMapper: (ChartData value, _) => value.maxDB,
+                              animationDuration: 0),
+                        ],
+                      ),
                     ),
                     SizedBox(
-                      height: 68,
+                      height: 30.h,
                     ),
                   ],
                 ),
