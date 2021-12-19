@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+## About this app
+Exhaust dB Checker - the easiest way to measure your exhaust noise
+
+Want to know if your exhaust violates Indonesian noise regulations? We use your phone's built-in mic to measure exhaust noise
+
+NOTE: mic in some devices can only recognize less than ~90 dB, and in some cases automatic gain control and mic quality may interfere with operation
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
