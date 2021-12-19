@@ -110,10 +110,7 @@ class _MainScreenState extends State<MainScreen> {
 
   String getFeedback(double? maxDB) {
     var noise = maxDB ?? 0;
-    if (noise == 0) {
-      return 'Press Start';
-    }
-    if (noise > 81) {
+    if (noise > 80) {
       return 'Your exhaust noise exceeds the\nregulatory limit';
     }
     return 'Your exhaust noise is within regulatory\nsafety limits';
@@ -121,7 +118,7 @@ class _MainScreenState extends State<MainScreen> {
 
   Color getFeedbackColor(double? maxDB) {
     var noise = maxDB ?? 0;
-    if (noise > 81) {
+    if (noise > 80) {
       return ColorPalettes.red;
     }
     return ColorPalettes.green;
@@ -190,15 +187,17 @@ class _MainScreenState extends State<MainScreen> {
                     )),
               ),
               SizedBox(
-                height: 2.h,
+                height: 4.h,
               ),
               Container(
                 child: Column(
                   children: [
                     PrimaryText(
-                      text: maxDB != null ? maxDB!.toStringAsFixed(0) : '0',
+                      text: maxDB != null
+                          ? maxDB!.toStringAsFixed(1) + ' dB'
+                          : '0.0 dB',
                       fontSize: 50.sp,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w500,
                       color: getFeedbackColor(maxDB),
                     ),
                     Container(
@@ -219,7 +218,7 @@ class _MainScreenState extends State<MainScreen> {
                           ),
                         )),
                     SizedBox(
-                      height: 5.h,
+                      height: 8.h,
                     ),
                     Container(
                       width: 90.w,
@@ -245,7 +244,7 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 30.h,
+                      height: 10.h,
                     ),
                   ],
                 ),
