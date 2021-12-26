@@ -9,6 +9,8 @@ NOTE: mic in some devices can only recognize less than ~90 dB, and in some cases
 download on playsotre: (https://play.google.com/store/apps/details?id=com.andrirahmanto.exhaustdbchecker)
 
 ## App Testing and Review
+Testing conducted on Thursday, 23 December 2021
+
 - Hendi Nur Ibrahim (Information systems student at Binus University)
 - Muhaimin Iqbal (Civil engineering student at Binus University)
 - Fajar Bilal (Fresh graduates, and working in the automotive sector) 
