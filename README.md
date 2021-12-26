@@ -6,16 +6,16 @@ Want to know if your exhaust violates Indonesian noise regulations? We use your 
 
 NOTE: mic in some devices can only recognize less than ~90 dB, and in some cases automatic gain control and mic quality may interfere with operation
 
-download on playsotre: [https://play.google.com/store/apps/details?id=com.andrirahmanto.exhaustdbchecker]
+download on playsotre: (https://play.google.com/store/apps/details?id=com.andrirahmanto.exhaustdbchecker){:target="_blank" rel="noopener"}
 
 ## Testers profile
 - Hendi Nur Ibrahim (Information systems student at Binus University)
 - Muhaimin Iqbal (Civil engineering student at Binus University)
 - Fajar Bilal (Fresh graduates, and working in the automotive sector) 
 
-Link to video review: [https://youtu.be/9LAGkMnpAOQ]
+Link to video review: (https://youtu.be/9LAGkMnpAOQ){:target="_blank" rel="noopener"}
 
-Link to sub: []
+Link to sub: (review_subtitle.txt)
 
 ## Getting Started
 
