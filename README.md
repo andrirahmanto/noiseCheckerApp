@@ -24,6 +24,7 @@ Privacy Policy: (https://github.com/andrirahmanto/noiseCheckerApp/blob/master/PR
 
 ## Info Code
 This application was developed using the Flutter framework and the Dart programming language.
+
 Flutter version used during development:
 - Flutter 2.2.3 : (https://docs.flutter.dev/development/tools/sdk/releases?tab=macos)
 
