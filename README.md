@@ -1,8 +1,5 @@
 # noisechecker
 
-A new Flutter project.
-
-## About this app
 Exhaust dB Checker - the easiest way to measure your exhaust noise
 
 Want to know if your exhaust violates Indonesian noise regulations? We use your phone's built-in mic to measure exhaust noise
