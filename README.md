@@ -8,24 +8,25 @@ NOTE: mic in some devices can only recognize less than ~90 dB, and in some cases
 
 download on playsotre: (https://play.google.com/store/apps/details?id=com.andrirahmanto.exhaustdbchecker)
 
-## Testers profile
+## App Testing and Review
 - Hendi Nur Ibrahim (Information systems student at Binus University)
 - Muhaimin Iqbal (Civil engineering student at Binus University)
 - Fajar Bilal (Fresh graduates, and working in the automotive sector) 
 
-Link to video review: (https://youtu.be/9LAGkMnpAOQ)
+Link to video: (https://youtu.be/9LAGkMnpAOQ)
 
 Link to sub: (https://github.com/andrirahmanto/noiseCheckerApp/blob/master/review_subtitle.txt)
 
-## Getting Started
+## Info App
+App runs at least on Android 5.0 and higher
 
-This project is a starting point for a Flutter application.
+Privacy Policy: (https://github.com/andrirahmanto/noiseCheckerApp/blob/master/PRIVACY_POLICY.md)
 
-A few resources to get you started if this is your first Flutter project:
+## Info Code
+This application was developed using the Flutter framework and the Dart programming language.
+Flutter version used during development:
+- Flutter 2.2.3 : (https://docs.flutter.dev/development/tools/sdk/releases?tab=macos)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+you can run it by cloning this repo, and:
+- flutter pub get
+- flutter run
